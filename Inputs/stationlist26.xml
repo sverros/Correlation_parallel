@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE shakemap-data [
+<!ELEMENT shakemap-data (earthquake,stationlist)>
+<!ELEMENT stationlist (station+)>
+<!ATTLIST stationlist
+  created	CDATA	#REQUIRED
+>
+
+<!ELEMENT station (comp+)>
+<!ATTLIST station
+  code		CDATA 			#REQUIRED
+  name		CDATA 			#REQUIRED
+  insttype	CDATA 			#REQUIRED
+  lat		CDATA 			#REQUIRED
+  lon		CDATA 			#REQUIRED
+  source	(SCSN|CGS|NSMP) 	'SCSN'
+  netid		CDATA			#REQUIRED
+  commtype	(DIG|ANA) 		'DIG'
+  dist          CDATA                   '10.0'
+  loc		CDATA			''
+>
+
+<!ELEMENT comp (acc,vel,psa*)>
+<!ATTLIST comp
+  name          CDATA  #REQUIRED
+  originalname  CDATA  #IMPLIED
+>
+
+<!ELEMENT acc EMPTY>
+<!ELEMENT vel EMPTY>
+<!ELEMENT psa03 EMPTY>
+<!ELEMENT psa10 EMPTY>
+<!ELEMENT psa30 EMPTY>
+<!ATTLIST acc
+  value  CDATA         #REQUIRED
+  flag   CDATA        ''
+>
+<!ATTLIST vel
+  value CDATA          #REQUIRED
+  flag  CDATA         ''
+>
+<!ATTLIST psa03
+  value CDATA          #REQUIRED
+  flag  CDATA         ''
+>
+<!ATTLIST psa10
+  value CDATA          #REQUIRED
+  flag  CDATA         ''
+>
+<!ATTLIST psa30
+  value CDATA          #REQUIRED
+  flag  CDATA         ''
+>
+<!ELEMENT  earthquake EMPTY>
+<!ATTLIST earthquake
+  id 		ID	#REQUIRED
+  lat		CDATA	#REQUIRED
+  lon		CDATA	#REQUIRED
+  mag		CDATA	#REQUIRED
+  year          CDATA   #REQUIRED
+  month         CDATA   #REQUIRED
+  day           CDATA   #REQUIRED
+  hour          CDATA   #REQUIRED
+  minute        CDATA   #REQUIRED
+  second        CDATA   #REQUIRED
+  timezone      CDATA   #REQUIRED
+  depth		CDATA	#REQUIRED
+  type		CDATA	#REQUIRED
+  locstring	CDATA	#REQUIRED
+  pga		CDATA   #REQUIRED
+  pgv		CDATA   #REQUIRED
+  sp03		CDATA   #REQUIRED
+  sp10		CDATA   #REQUIRED
+  sp30		CDATA   #REQUIRED
+  created	CDATA	#REQUIRED
+>
+]>
+<shakemap-data code_version="3.5" map_version="2">
+<earthquake id="19940117123055" lat="34.211" lon="-118.546" mag="6.6" year="1994" month="1" day="17" hour="12" minute="30" second="55" timezone="GMT" depth="19" network="" locstring="Northridge, California" created="1425660634" />
+<stationlist created="1425660634">
+<station code="12A" name="ELIZABETH LAKE" insttype="UNK" lat="34.571" lon="-118.56" dist="19.659644" source="HIST" netid="HI" commtype="ANA" loc="" intensity="6.0">
+<comp name="UNK">
+<pga value="25.7635" flag="0" />
+<pgv value="11.5680" flag="0" />
+<psa03 value="39.1546" flag="0" />
+<psa10 value="7.9478" flag="0" />
+<psa30 value="3.0082" flag="0" />
+</comp>
+</station>
+<station code="AHM" name="ANAHEIM" insttype="UNK" lat="33.817" lon="-117.95" dist="68.850224" source="HIST" netid="HI" commtype="ANA" loc="" intensity="5.4">
+<comp name="UNK">
+<pga value="7.8151" flag="0" />
+<pgv value="7.8600" flag="0" />
+<psa03 value="26.7447" flag="0" />
+<psa10 value="11.9419" flag="0" />
+<psa30 value="1.8547" flag="0" />
+</comp>
+</station>
+<station code="ALF" name="ALHAMBRA" insttype="UNK" lat="34.070" lon="-118.15" dist="36.997067" source="HIST" netid="HI" commtype="ANA" loc="" intensity="5.9">
+<comp name="UNK">
+<pga value="10.0995" flag="0" />
+<pgv value="10.8040" flag="0" />
+<psa03 value="18.1406" flag="0" />
+<psa10 value="13.4125" flag="0" />
+<psa30 value="2.2415" flag="0" />
+</comp>
+</station>
+<station code="ANB" name="ANTELOPE BUTTES" insttype="UNK" lat="34.758" lon="-118.36" dist="45.006841" source="HIST" netid="HI" commtype="ANA" loc="" intensity="4.5">
+<comp name="UNK">
+<pga value="6.8251" flag="0" />
+<pgv value="3.9785" flag="0" />
+<psa03 value="11.6458" flag="0" />
+<psa10 value="5.1073" flag="0" />
+<psa30 value="1.3681" flag="0" />
+</comp>
+</station>
+<station code="ANI" name="ANACAPA ISLAND" insttype="UNK" lat="34.016" lon="-119.36" dist="70.185798" source="HIST" netid="HI" commtype="ANA" loc="" intensity="4.2">
+<comp name="UNK">
+<pga value="6.7218" flag="0" />
+<pgv value="3.2388" flag="0" />
+<psa03 value="17.2751" flag="0" />
+<psa10 value="3.4342" flag="0" />
+<psa30 value="0.3575" flag="0" />
+</comp>
+</station>
+<station code="ANV" name="ANAVERDE VALLEY" insttype="UNK" lat="34.580" lon="-118.20" dist="36.064118" source="HIST" netid="HI" commtype="ANA" loc="" intensity="4.9">
+<comp name="UNK">
+<pga value="6.0271" flag="0" />
+<pgv value="5.4765" flag="0" />
+<psa03 value="16.5173" flag="0" />
+<psa10 value="14.8905" flag="0" />
+<psa30 value="1.7284" flag="0" />
+</comp>
+</station>
+<station code="ARC" name="ARCADIA" insttype="UNK" lat="34.130" lon="-118.04" dist="40.954758" source="HIST" netid="HI" commtype="ANA" loc="" intensity="5.4">
+<comp name="UNK">
+<pga value="12.3700" flag="0" />
+<pgv value="7.6848" flag="0" />
+<psa03 value="45.9408" flag="0" />
+<psa10 value="13.8033" flag="0" />
+<psa30 value="3.7179" flag="0" />
+</comp>
+</station>
+<station code="BAD" name="BREA DAM" insttype="UNK" lat="33.890" lon="-117.93" dist="64.940873" source="HIST" netid="HI" commtype="ANA" loc="" intensity="6.4">
+<comp name="UNK">
+<pga value="24.5953" flag="0" />
+<pgv value="16.4790" flag="0" />
+<psa03 value="60.0760" flag="0" />
+<psa10 value="13.1455" flag="0" />
+<psa30 value="1.6233" flag="0" />
+</comp>
+</station>
+<station code="BAP" name="BUENA PARK" insttype="UNK" lat="33.847" lon="-118.02" dist="62.046522" source="HIST" netid="HI" commtype="ANA" loc="" intensity="5.8">
+<comp name="UNK">
+<pga value="15.6279" flag="0" />
+<pgv value="10.0580" flag="0" />
+<psa03 value="34.1726" flag="0" />
+<psa10 value="13.6166" flag="0" />
+<psa30 value="2.4669" flag="0" />
+</comp>
+</station>
+<station code="BCY" name="BURBANK" insttype="UNK" lat="34.204" lon="-118.30" dist="17.336329" source="HIST" netid="HI" commtype="ANA" loc="" intensity="5.9">
+<comp name="UNK">
+<pga value="16.6524" flag="0" />
+<pgv value="11.1880" flag="0" />
+<psa03 value="51.2835" flag="0" />
+<psa10 value="8.9669" flag="0" />
+<psa30 value="2.2972" flag="0" />
+</comp>
+</station>
+<station code="BGC" name="BELL GARDENS" insttype="UNK" lat="33.965" lon="-118.16" dist="44.303555" source="HIST" netid="HI" commtype="ANA" loc="" intensity="5.5">
+<comp name="UNK">
+<pga value="10.5729" flag="0" />
+<pgv value="8.4260" flag="0" />
+<psa03 value="20.7441" flag="0" />
+<psa10 value="16.8193" flag="0" />
+<psa30 value="2.5660" flag="0" />
+</comp>
+</station>
+<station code="BHA" name="LOS ANGELES" insttype="UNK" lat="34.009" lon="-118.36" dist="30.598954" source="HIST" netid="HI" commtype="ANA" loc="" intensity="6.5">
+<comp name="UNK">
+<pga value="23.8716" flag="0" />
+<pgv value="17.4430" flag="0" />
+<psa03 value="66.7434" flag="0" />
+<psa10 value="16.4307" flag="0" />
+<psa30 value="6.9722" flag="0" />
+</comp>
+</station>
+<station code="BPK" name="BALDWIN PARK" insttype="UNK" lat="34.100" lon="-117.97" dist="48.161438" source="HIST" netid="HI" commtype="ANA" loc="" intensity="5.2">
+<comp name="UNK">
+<pga value="14.1835" flag="0" />
+<pgv value="6.7115" flag="0" />
+<psa03 value="24.3732" flag="0" />
+<psa10 value="5.8310" flag="0" />
+<psa30 value="1.6922" flag="0" />
+</comp>
+</station>
+<station code="BTS" name="BIG TUJUNGA STATION" insttype="UNK" lat="34.286" lon="-118.22" dist="19.428296" source="HIST" netid="HI" commtype="ANA" loc="" intensity="6.2">
+<comp name="UNK">
+<pga value="26.4495" flag="0" />
+<pgv value="13.6010" flag="0" />
+<psa03 value="61.0987" flag="0" />
+<psa10 value="18.4470" flag="0" />
+<psa30 value="1.0856" flag="0" />
+</comp>
+</station>
+<station code="CAS" name="CARSON" insttype="UNK" lat="33.812" lon="-118.27" dist="50.944054" source="HIST" netid="HI" commtype="ANA" loc="" intensity="5.5">
+<comp name="UNK">
+<pga value="10.1572" flag="0" />
+<pgv value="8.3202" flag="0" />
+<psa03 value="19.3949" flag="0" />
+<psa10 value="5.6941" flag="0" />
+<psa30 value="1.5546" flag="0" />
+</comp>
+</station>
+<station code="CBP" name="COVINA" insttype="UNK" lat="34.087" lon="-117.92" dist="52.864132" source="HIST" netid="HI" commtype="ANA" loc="" intensity="5.3">
+<comp name="UNK">
+<pga value="10.9052" flag="0" />
+<pgv value="7.3732" flag="0" />
+<psa03 value="23.4730" flag="0" />
+<psa10 value="9.8629" flag="0" />
+<psa30 value="1.9781" flag="0" />
+</comp>
+</station>
+<station code="CCS" name="COVINA" insttype="UNK" lat="34.078" lon="-117.87" dist="57.382957" source="HIST" netid="HI" commtype="ANA" loc="" intensity="5.3">
+<comp name="UNK">
+<pga value="7.7069" flag="0" />
+<pgv value="7.1771" flag="0" />
+<psa03 value="23.6142" flag="0" />
+<psa10 value="8.3454" flag="0" />
+<psa30 value="2.0958" flag="0" />
+</comp>
+</station>
+<station code="CCY" name="CANYON COUNTRY" insttype="UNK" lat="34.419" lon="-118.43" dist="10.594139" source="HIST" netid="HI" commtype="ANA" loc="" intensity="7.9">
+<comp name="UNK">
+<pga value="49.2069" flag="0" />
+<pgv value="46.4060" flag="0" />
+<psa03 value="120.5522" flag="0" />
+<psa10 value="67.2938" flag="0" />
+<psa30 value="10.7753" flag="0" />
+</comp>
+</station>
+<station code="CDA" name="CARSON" insttype="UNK" lat="33.836" lon="-118.24" dist="50.272694" source="HIST" netid="HI" commtype="ANA" loc="" intensity="5.5">
+<comp name="UNK">
+<pga value="9.4851" flag="0" />
+<pgv value="8.6261" flag="0" />
+<psa03 value="29.9490" flag="0" />
+<psa10 value="12.5068" flag="0" />
+<psa30 value="2.7190" flag="0" />
+</comp>
+</station>
+<station code="CMO" name="CAMARILLO" insttype="UNK" lat="34.208" lon="-119.08" dist="41.459340" source="HIST" netid="HI" commtype="ANA" loc="" intensity="6.0">
+<comp name="UNK">
+<pga value="12.4608" flag="0" />
+<pgv value="11.6200" flag="0" />
+<psa03 value="30.3176" flag="0" />
+<psa10 value="19.1582" flag="0" />
+<psa30 value="6.6858" flag="0" />
+</comp>
+</station>
+<station code="CND" name="CARBON CANYON DAM" insttype="UNK" lat="33.914" lon="-117.84" dist="69.702723" source="HIST" netid="HI" commtype="ANA" loc="" intensity="6.3">
+<comp name="UNK">
+<pga value="18.6035" flag="0" />
+<pgv value="15.0680" flag="0" />
+<psa03 value="41.1010" flag="0" />
+<psa10 value="13.2834" flag="0" />
+<psa30 value="0.9619" flag="0" />
+</comp>
+</station>
+<station code="COM" name="COMPTON" insttype="UNK" lat="33.899" lon="-118.20" dist="47.219523" source="HIST" netid="HI" commtype="ANA" loc="" intensity="5.6">
+<comp name="UNK">
+<pga value="13.0204" flag="0" />
+<pgv value="8.8038" flag="0" />
+<psa03 value="31.9070" flag="0" />
+<psa10 value="10.2298" flag="0" />
+<psa30 value="3.1216" flag="0" />
+</comp>
+</station>
+<station code="CPC" name="CANOGA PARK" insttype="UNK" lat="34.212" lon="-118.61" dist="16.010000" source="HIST" netid="HI" commtype="ANA" loc="" intensity="8.3">
+<comp name="UNK">
+<pga value="41.2314" flag="0" />
+<pgv value="65.8160" flag="0" />
+<psa03 value="111.3202" flag="0" />
+<psa10 value="51.5932" flag="0" />
+<psa30 value="14.4351" flag="0" />
+</comp>
+</station>
+<station code="DOW" name="DOWNEY" insttype="UNK" lat="33.924" lon="-118.17" dist="46.916367" source="HIST" netid="HI" commtype="ANA" loc="" intensity="6.1">
+<comp name="UNK">
+<pga value="22.2671" flag="0" />
+<pgv value="12.7030" flag="0" />
+<psa03 value="64.3617" flag="0" />
+<psa10 value="15.3448" flag="0" />
+<psa30 value="3.1532" flag="0" />
+</comp>
+</station>
+<station code="DUA" name="DUARTE" insttype="UNK" lat="34.150" lon="-117.94" dist="48.187688" source="HIST" netid="HI" commtype="ANA" loc="" intensity="4.5">
+<comp name="UNK">
+<pga value="8.3211" flag="0" />
+<pgv value="3.8546" flag="0" />
+<psa03 value="15.6149" flag="0" />
+<psa10 value="4.1001" flag="0" />
+<psa30 value="1.4704" flag="0" />
+</comp>
+</station>
+<station code="DWY" name="DOWNEY" insttype="UNK" lat="33.920" lon="-118.14" dist="48.997808" source="HIST" netid="HI" commtype="ANA" loc="" intensity="6.0">
+<comp name="UNK">
+<pga value="16.9684" flag="0" />
+<pgv value="11.4780" flag="0" />
+<psa03 value="40.9515" flag="0" />
+<psa10 value="11.9542" flag="0" />
+<psa30 value="2.7083" flag="0" />
+</comp>
+</station>
+
+</stationlist>
+</shakemap-data>
