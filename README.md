@@ -1,6 +1,10 @@
 Running the Code
 
-After installation, this code may be run using the Successive Code ipython notebook. Within this notebook, the variable of interest, i.e. pga, the radius, the desired number of realizations, and the path to the xml files may be set. 
+After installation, this code may be run using the command
+
+mpiexec -n N python test_p2.py
+
+where N is the desired number of cores. The variable of interest, i.e. pga, the radius, the desired number of realizations, and the path to the xml files may be set within the test_p2.py file. 
 
 Installation and Dependencies
 
