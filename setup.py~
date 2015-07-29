@@ -28,6 +28,9 @@ def initialize(shakemap, unc_INTRA, unc_INTER, stationdata, dm=1, dn=1):
     itensity- factor for non-native data
     site_collection_both- site collection for both SM and stations
     """
+
+    start = time.time()
+
     attributes = shakemap.getAttributes()
     
     # Determine the size of the grid                                                                
@@ -93,6 +96,9 @@ def initialize(shakemap, unc_INTRA, unc_INTER, stationdata, dm=1, dn=1):
     site_collection_station = SiteCollection(site_station)
     site_both = site_station + site_SM
     site_collection_both = SiteCollection(site_both)
+    
+    end = time.time() - start
+    print '\tInitialization Time:', end
     
     return {'M': M, 'N': N, 'K': K, 'uncertaintydata':uncertainty, \
                 'site_collection_SM':site_collection_SM, \

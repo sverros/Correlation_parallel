@@ -7,6 +7,7 @@ from matplotlib import cm
 
 WATER_COLOR = [.47,.60,.81]
 
+
 def plot(out, variables, voi, shakemap, stationdata):
 #    maxdata = np.amax(out['data_new'])
     attributes = shakemap.getAttributes()
