@@ -113,7 +113,7 @@ def main(var, r, voi, rand, cor_model, vs_corr):
                 comm.Send(xi, dest = 0, tag = my_rank*111)
 
                 # Send the grid, mu, and sigma arrays
-                comm.Send([grid_arr[iter], MPI.INTEGER], dest = 0, tag = iter*my_rank*11)
+                comm.Send([grid_arr[iter], MPI.INT], dest = 0, tag = iter*my_rank*11)
                 comm.Send([mu_arr[iter],   MPI.DOUBLE], dest = 0, tag = iter*my_rank*12)
                 comm.Send([sigma_arr[iter],MPI.DOUBLE], dest = 0, tag = iter*my_rank*13)
     # Master gathers all arrays
@@ -138,7 +138,7 @@ def main(var, r, voi, rand, cor_model, vs_corr):
                 full_mu_arr[int(xi[2])] = np.empty([1, int(xi[1])], dtype = 'd')
                 temp_buff = np.empty([int(xi[0])*2,1], dtype = 'int32')
                 # Recieve the grid, mu, and sigma arrays
-                comm.Recv([temp_buff, MPI.INTEGER], source = rank, tag = 11*(rank)*j)
+                comm.Recv([temp_buff, MPI.INT], source = rank, tag = 11*(rank)*j)
 
                 comm.Recv([full_mu_arr   [int(xi[2])], MPI.DOUBLE], source = rank, 
                           tag = 12*(rank)*j)

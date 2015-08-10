@@ -1,22 +1,18 @@
 from numba import jit
 import numpy as np
-#from model_losses import model_loss, MMI_conv, initialize_loss
 
-def realizations(num_realizations, my_rank, radius, N,M, grid_arr, mu_arr, sigma_arr, uncertaintydata, DATA, compute_loss, shakemap, voi):
+
+def realizations(num_realizations, my_rank, radius, N,M, grid_arr, mu_arr, sigma_arr, uncertaintydata, DATA):
 
     if num_realizations == 0:
         return
     else:
-        if compute_loss == True:
-            popgrid, isogrid, ratedict = initialize_loss(shakemap)
-            ccodes = [None]*num_realizations
-            fats = [None]*num_realizations
-
-        g = open(('corr_R%i_rank%i_CC0_JB' % (radius, my_rank)), 'w')
+        g = open(('corr_output_R%i_rank%i' % (radius, my_rank)), 'w')
         s = str(num_realizations)
         g.write(s+'\n')
 
         for j in range(0, num_realizations):
+            
             rand_arr = np.random.randn(M*N)
             X = np.zeros([M*N,1])
             for i in range(0,M*N):
@@ -26,19 +22,27 @@ def realizations(num_realizations, my_rank, radius, N,M, grid_arr, mu_arr, sigma
                 X[i] = mu + rand_arr[i] * sigma_arr[i]
                 s = str(X[i])
                 g.write(s+'\n')
-
-            COR = np.reshape(X, [M,N])
-            X = np.multiply(COR, uncertaintydata)
-            DATA_NEW = DATA * np.exp(X)
-
-            if compute_loss == True:
-                mmi_data = MMI_conv(DATA_NEW, voi)
-                ccodes[j], fats[j] = model_loss(mmi_data, popgrid, isogrid, ratedict)
-                print fats
+                
+            # COR = np.reshape(X, [M,N])
+            # X = np.multiply(COR, uncertaintydata)
+            # DATA_NEW = DATA * np.exp(X)
+                
             if np.mod(j+1, 25) == 0:
                 print "Done with", j+1, "of", num_realizations, "iterations."
 
         g.close()
 
-
         return {'cor':COR, 'data':DATA, 'data_new':DATA_NEW}
+
+
+@jit('int64[:,:], int64[:, :]', nopython = True)
+def addition(a,b):
+    return a
+
+
+a = np.array([[1, 2, 3], [1,2,3]])
+b = np.array([[1,1,1], [1,1,1]])
+#a = np.array([1])
+#b = np.array([2])
+
+print addition(a,b)

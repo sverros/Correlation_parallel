@@ -23,22 +23,23 @@ from matplotlib import cm
 import matplotlib.pyplot as plt
 from neicio.gmt import GMTGrid
 import sys
-sys.path.append('/Users/sverros/Documents/Modules/Correlation_parallel')
+sys.path.append('/home/sverros/Correlation_parallel')
 from setup import initialize
 from loop import main
 from realizations import realizations
-from plotting import plot
+#from plotting import plot
 
 comm = MPI.COMM_WORLD
 size = comm.Get_size()
 my_rank = comm.Get_rank()
 
 voi = 'PGA'
-r = [10, 20]
+r = [25]
 num_realizations = 10
 corr_model = 'JB2009'
 vscorr = True
 plot_on = False
+compute_loss = False
 
 for R in range(0, np.size(r)):
 
@@ -81,8 +82,9 @@ for R in range(0, np.size(r)):
         if my_rank == 0:
             print 'Computing realizations'
             data = realizations(1, my_rank, radius, variables['N'], 
-                     variables['M'], out['grid_arr'], out['mu_arr'], 
-                     out['sigma_arr'], variables['uncertaintydata'], variables['data'])
+                            variables['M'], out['grid_arr'], out['mu_arr'], 
+                            out['sigma_arr'], variables['uncertaintydata'], variables['data'], 
+                            compute_loss, shakemap, voi)
     else:
         # Master broadcasts the arrays to the other cores
         if my_rank == 0:
@@ -101,7 +103,8 @@ for R in range(0, np.size(r)):
         # Each core does a set of realizations
         data = realizations(np.size(my_reals), my_rank, radius, variables['N'], 
                             variables['M'], grid_arr, mu_arr, sigma_arr, 
-                            variables['uncertaintydata'], variables['data'])
+                            variables['uncertaintydata'], variables['data'], 
+                            compute_loss, shakemap, voi)
 
     realization_time = time.time() - total_time_start - initialization_time - main_time
 
